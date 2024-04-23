@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import Inputs from '../Inputs/Inputs';
-import './Form.css';
-import FormFooter from '../FormFooter/FormFooter';
-import { dropStatus, signIn } from '../../../requests/profile';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Inputs from "../Inputs/Inputs";
+import "./Form.css";
+import FormFooter from "../FormFooter/FormFooter";
+import { dropStatus, signIn } from "../../../requests/profile";
 
 const FormAuthorization = () => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signInStatus = useSelector((state) => state.profile.status);
 
   useEffect(() => {
-    if (signInStatus === 'done') {
-      navigate('/');
+    if (signInStatus === "done") {
+      navigate("/");
       dispatch(dropStatus());
-    }
-    if (signInStatus === 'error') {
+    } else if (signInStatus === "error") {
       setError(true);
     }
-  }, [error, signInStatus, navigate, dispatch]);
+  }, [signInStatus, navigate, dispatch]);
 
   const handleSubmit = async () => {
-    dispatch(signIn({ login, password }));
+    if (login && password) {
+      dispatch(signIn({ login, password }));
+    }
   };
 
-  const submitDisable = !(login && password);
+  const submitDisabled = !(login && password);
 
   return (
     <div className="form__container">
@@ -40,12 +41,18 @@ const FormAuthorization = () => {
           Зарегистрироваться
         </a>
       </div>
-      <Inputs login={login} password={password} setLogin={setLogin} setPassword={setPassword} error={error} />
+      <Inputs
+        login={login}
+        password={password}
+        setLogin={setLogin}
+        setPassword={setPassword}
+        error={error}
+      />
       <button
         className="form__button"
         onClick={handleSubmit}
-        disabled={submitDisable}
-        style={{ opacity: submitDisable ? '50%' : '100%' }}
+        disabled={submitDisabled}
+        style={{ opacity: submitDisabled ? "0.5" : "1" }}
       >
         Войти
       </button>
