@@ -2,18 +2,22 @@
   font-family: "Ferry";
   font-style: normal;
   font-weight: 400;
-  src: local("Ferry"), url("/fonts/ferry_black.otf") format("otf");
+  src: local("Ferry"),
+       url("/fonts/ferry_black.otf") format("otf"),
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: local("Inter"), url("/fonts/Inter-Medium.ttf") format("ttf");
+  src: local("Inter"),
+       url("/fonts/Inter-Medium.ttf") format("ttf"),
 }
 .App {
-  margin: 0 auto;
+  margin:0 auto;
   text-align: center;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Inter",Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
+
+

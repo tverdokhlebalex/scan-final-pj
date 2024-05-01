@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+{RU}
+«СКАН» - сервис поиска публикаций о компаниях по ИНН. Сервис предназначен для менеджеров по PR, коммуникациям и специалистов по рискам и безопасности. Решает широкий спектр задач, связанных с медиааналитикой.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Компания «СКАН» помогает бизнесу формировать репутацию в интернете. Она предоставляет возможности не только мониторить СМИ и коммуницировать с журналистами, но и проверять своих контрагентов.
 
-## Available Scripts
+Что бы запустить проект нужно:
+    1.Выполнить команду npm install (должны установиться все зависимости)
+    2.Выполнить npm start (проект должен запуститься без ошибок)
 
-In the project directory, you can run:
+Для авторизации можно использовать пользователя
+    логин: sf_student1 | пароль - 4i2385j
 
-### `npm start`
+Для теста используйте следующие ИНН: 7706074737 или 7710416415
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Для проверки http запросов используем postman 
+для проверки авторизации: POST запросе  https://gateway.scan-interfax.ru/api/v1/account/login  
+        В body - key: {login  password}  value: {соответсвующие параметры}, далее получаем токен авторизации!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+для проверки токена авторизации: в GET запросе https://gateway.scan-interfax.ru/api/v1/account/info выставляем авторизацию по токену Bearer! и получаем ответ! 
 
-### `npm test`
+{EN}
+"SCAN" is a service for searching publications about companies by TIN (Taxpayer Identification Number). The service is designed for PR managers, communications specialists, and risk and security professionals. It addresses a wide range of tasks related to media analytics.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The "SCAN" company helps businesses shape their online reputation. It provides opportunities not only to monitor the media and communicate with journalists but also to check counterparties.
 
-### `npm run build`
+To launch the project, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Execute the command npm install (all dependencies should be installed).
+Execute npm start (the project should start without errors).
+For authorization, you can use the following login credentials: username - sf_student1 | password - 4i2385j.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For testing purposes, use the following TIN (Taxpayer Identification Numbers): 7706074737 or 7710416415.
+                   
