@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import Inputs from '../Inputs/Inputs';
-import './Form.css';
-import FormFooter from '../FormFooter/FormFooter';
-import { dropStatus, signIn } from '../../../requests/profile';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Inputs from "../Inputs/Inputs";
+import "./Form.css";
+import FormFooter from "../FormFooter/FormFooter";
+import { dropStatus, signIn } from "../../../requests/profile";
 
 const FormAuthorization = () => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signInStatus = useSelector((state) => state.profile.status);
 
   useEffect(() => {
-    if (signInStatus === 'done') {
-      navigate('/');
+    if (signInStatus === "done") {
+      navigate("/");
       dispatch(dropStatus());
     }
-    if (signInStatus === 'error') {
+    if (signInStatus === "error") {
       setError(true);
     }
   }, [error, signInStatus, navigate, dispatch]);
@@ -31,25 +31,31 @@ const FormAuthorization = () => {
   const submitDisable = !(login && password);
 
   return (
-    <div className="form__container">
-      <div className="form__linkBox">
-        <a className="form__link" href="xxx">
+    <div className="auth__container">
+      <div className="auth__links">
+        <a className="auth__link" href="xxx">
           Войти
         </a>
-        <a className="form__link form__link_inactive" href="xxx">
+        <a className="auth__link auth__link--disabled" href="xxx">
           Зарегистрироваться
         </a>
       </div>
-      <Inputs login={login} password={password} setLogin={setLogin} setPassword={setPassword} error={error} />
+      <Inputs
+        login={login}
+        password={password}
+        setLogin={setLogin}
+        setPassword={setPassword}
+        error={error}
+      />
       <button
-        className="form__button"
+        className="auth__submit-button"
         onClick={handleSubmit}
         disabled={submitDisable}
-        style={{ opacity: submitDisable ? '50%' : '100%' }}
+        style={{ opacity: submitDisable ? "50%" : "100%" }}
       >
         Войти
       </button>
-      <a className="form__ResumeLink" href="xxx">
+      <a className="auth__recover-link" href="xxx">
         Восстановить пароль
       </a>
       <FormFooter />

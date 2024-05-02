@@ -1,21 +1,21 @@
-.formFooterContainer{
-    width: 320px;
-    align-self: flex-start;
-    margin-top: 30px;
-}  
-.formFooterSection{
-    color: #949494;
+.authFooterContainer {
+  width: 320px;
+  align-self: flex-start;
+  margin-top: 30px;
 }
-.formFooterBox{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+.authFooterTitle {
+  color: #949494;
 }
-.formFooterBoxItem{
-    border: 1px solid rgba(89, 112, 255, 0.51);
-    border-radius: 3px;
+.authFooterSocials {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-.formFooterBoxLink{
-    display: block;
-    padding: 5px 15px;
+.authFooterSocialItem {
+  border: 1px solid rgba(89, 112, 255, 0.51);
+  border-radius: 3px;
+}
+.authFooterSocialLink {
+  display: block;
+  padding: 5px 15px;
 }

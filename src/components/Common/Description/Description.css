@@ -1,60 +1,55 @@
 @font-face {
-    font-family: "Ferry";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Ferry"),
-         url("/fonts/ferry_black.otf") format("otf"),
-  }
-.Description__block{
-    display: flex;
-    justify-content: space-between;
+  font-family: "Ferry";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ferry"), url("/fonts/ferry_black.otf") format("otf");
 }
-.Description__title{
-    font-family: 'Ferry', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 72px;
-    width: 84%;
+.ServiceDescription__container {
+  display: flex;
+  justify-content: space-between;
 }
-.Description__paragraph{
-    width: 78%;
-    font-size: 20px;
-    padding-top: 50px;
-    line-height: 24px;
+.ServiceDescription__heading {
+  font-family: "Ferry", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 72px;
+  width: 84%;
 }
-.RequestBtn{
-    background-color: #5970FF;
-    color: #FFFFFF;
-    margin-top: 70px;
-    height: 60px;
-    border-radius: 5px;
-    border: none;
-    font-size: 22px;
-    font-weight: 500;
-    width: 335px;
+.ServiceDescription__text {
+  width: 78%;
+  font-size: 20px;
+  padding-top: 50px;
+  line-height: 24px;
+}
+.ServiceDescription__button {
+  background-color: #5970ff;
+  color: #ffffff;
+  margin-top: 70px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+  width: 335px;
 }
 @media screen and (max-width: 1150px) {
-    .Description__block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .Description__paragraph{
-        width: 100%
-    }
-    .Description__leftBlock{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .funMan{
-        width: 100%;
-    }
+  .ServiceDescription__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ServiceDescription__text {
+    width: 100%;
+  }
+  .ServiceDescription__content {
+    align-items: center;
+  }
+  .ServiceDescription__image {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 750px) {
-    .Description__title{
-        font-size: 28px;
-        line-height: 33px;
-    }
+  .ServiceDescription__heading {
+    font-size: 28px;
+    line-height: 33px;
+  }
 }
-    

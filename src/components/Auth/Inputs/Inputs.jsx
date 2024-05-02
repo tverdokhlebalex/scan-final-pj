@@ -1,27 +1,40 @@
-import React from 'react'
-import './Inputs.css'
-const Inputs = ({setLogin, setPassword, error}) => {
+import React from "react";
+import "./Inputs.css";
+const Inputs = ({ setLogin, setPassword, error }) => {
   const handlePassword = (evt) => {
-    setPassword(evt.target.value)
-  }
+    setPassword(evt.target.value);
+  };
   const handleLogin = (evt) => {
-    setLogin(evt.target.value)
-  }
-  const visibility = error ? 'visible' : 'hidden'
-  const inputColor = error ? 'red' : '#C7C7C7'
+    setLogin(evt.target.value);
+  };
+  const visibility = error ? "visible" : "hidden";
+  const inputColor = error ? "red" : "#C7C7C7";
   return (
-    <form className='form'>
-        <label className='form__label' htmlFor='login'>Логин или номер телефона:</label>
-        <input className='form__loginInput' onChange={handleLogin} id='login' type='text'/>
-        <label className='form__label' htmlFor='password'>Пароль:</label>
-        <input className='form__loginInput' 
-        onChange={handlePassword} 
-        id='password' 
-        type='password'
-        style={{borderColor:inputColor}}/>
-        <span className='form__errText'style={{visibility}}>Неправильный пароль</span>
+    <form className="authForm">
+      <label className="authForm__label" htmlFor="login">
+        Логин или номер телефона:
+      </label>
+      <input
+        className="authForm__input"
+        onChange={handleLogin}
+        id="login"
+        type="text"
+      />
+      <label className="authForm__label" htmlFor="password">
+        Пароль:
+      </label>
+      <input
+        className="authForm__input"
+        onChange={handlePassword}
+        id="password"
+        type="password"
+        style={{ borderColor: inputColor }}
+      />
+      <span className="authForm__errorText" style={{ visibility }}>
+        Неправильный пароль
+      </span>
     </form>
-  )
+  );
 };
 
 export default Inputs;

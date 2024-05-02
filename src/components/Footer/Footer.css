@@ -1,16 +1,15 @@
-.footer{
-    margin-top: 80px ;
-    background-color: #029491;
+.siteFooter {
+  margin-top: 80px;
+  background-color: #029491;
 }
-.footer__wrapper{
-    width: 92vw;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
+.siteFooter__wrapper {
+  width: 92vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
-.footer__connectInfo{
-    text-align: flex-end;
-    margin-top: 27px;
-    color:white;
+.siteFooter__contactInfo {
+  text-align: flex-end;
+  margin-top: 27px;
+  color: white;
 }
-

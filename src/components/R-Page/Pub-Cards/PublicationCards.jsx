@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getDocuments } from '../../../requests/histograms';
-import './PublicationCards.css';
-import { convertDocObjectToCard } from '../../../applications/convertDocObjectToCardInfo';
-import Badge from 'react-bootstrap/Badge';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getDocuments } from "../../../requests/histograms";
+import "./PublicationCards.css";
+import { convertDocObjectToCard } from "../../../applications/convertDocObjectToCardInfo";
+import Badge from "react-bootstrap/Badge";
 
 const PublicationCards = () => {
-  const { publicationIds, documents } = useSelector(state => state.histograms);
+  const { publicationIds, documents } = useSelector(
+    (state) => state.histograms
+  );
 
   const dispatch = useDispatch();
   const [offSet, setOffSet] = useState(0);
@@ -28,37 +30,55 @@ const PublicationCards = () => {
 
   return (
     <>
-      <div className='publicationCards__wrapper'>
+      <div className="articleCards__wrapper">
         {docs.map((obj, ind) => (
-          <div className='publicationCards__content' key={ind}>
-            <div className='publicationCards__dateArticle'>
-              <span className='publicationCards__span'>{obj.date}</span>
-              <a className='publicationCards__article' href={obj.articleUrl}>
+          <div className="articleCards__card" key={ind}>
+            <div className="articleCards__header">
+              <span className="articleCards__date">{obj.date}</span>
+              <a className="articleCards__link" href={obj.articleUrl}>
                 {obj.articleUrlTitle}
               </a>
             </div>
-            <h4 className='publicationCards__title'>{obj.articleTitle}</h4>
+            <h4 className="articleCards__title">{obj.articleTitle}</h4>
             {obj.articleTags &&
-              obj.articleTags.map(tag => (
-                <Badge bg='warning' text='dark' key={tag}>
+              obj.articleTags.map((tag) => (
+                <Badge bg="warning" text="dark" key={tag}>
                   {tag}
                 </Badge>
               ))}
-            {obj.imageUrl && <img className='publicationCards__img' src={obj.imageUrl} alt='article pic' />}
+            {obj.imageUrl && (
+              <img
+                className="articleCards__image"
+                src={obj.imageUrl}
+                alt="article pic"
+              />
+            )}
             <div dangerouslySetInnerHTML={{ __html: obj.articleContent }} />
-            <div className='publicationCards__buttonBox'>
-              <form action={obj.articleUrl} target='_blank'>
-                <button className='publicationCards__button'>Читать источник</button>
+            <div className="articleCards__footer">
+              <form action={obj.articleUrl} target="_blank">
+                <button className="articleCards__button">
+                  Читать источник
+                </button>
               </form>
-              <section className='publicationCards__section'>{obj.wordCount} слов&lang;а&rang;</section>
+              <section className="articleCards__wordCount">
+                {obj.wordCount} слов&lang;а&rang;
+              </section>
             </div>
           </div>
         ))}
       </div>
-      <div className='adjustBox'>{!isDone && <button onClick={showTenArticles} className='publicationCards__showBtn'>Показать больше</button>}</div>
+      <div className="articleCards__moreButtonContainer">
+        {!isDone && (
+          <button
+            onClick={showTenArticles}
+            className="articleCards__showMoreButton"
+          >
+            Показать больше
+          </button>
+        )}
+      </div>
     </>
   );
 };
 
 export default PublicationCards;
-
