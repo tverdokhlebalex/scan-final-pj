@@ -1,71 +1,85 @@
-.articleCards__wrapper {
+.publicationCards__wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.articleCards__card {
-  display: flex;
+.publicationCards__content {
+  display: block;
   flex-direction: column;
   width: 49%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgb(0 0 0 / 20%);
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 30px 35px 30px;
+  word-break: break-screen;
   margin-bottom: 20px;
 }
-.articleCards__title {
+.publicationCards__content > div {
+  color: #949494;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 2%;
+  text-align: left;
+}
+.publicationCards__title {
   font-weight: 700;
   font-size: 26px;
   line-height: 31px;
+  letter-spacing: 2%;
 }
-.articleCards__header {
+.publicationCards__dateArticle {
   display: flex;
 }
-.articleCards__date {
+.publicationCards__span {
   color: #949494;
   margin-right: 20px;
   min-width: 90px;
 }
-.articleCards__link {
-  color: #5970ff; /* Brighter color for links for better visibility */
+.publicationCards__article {
+  color: #949494;
 }
-.articleCards__button {
+.publicationCards__text {
+  opacity: 50%;
+}
+.publicationCards__button {
   border: none;
   background-color: #7ce3e1;
   border-radius: 5px;
   margin: 20px 0;
   padding: 10px 20px;
 }
-.articleCards__footer {
+.publicationCards__buttonBox {
   display: flex;
   justify-content: space-between;
 }
-.articleCards__wordCount {
+.publicationCards__section {
   color: #949494;
   align-self: center;
 }
-.articleCards__image {
+.publicationCards__img {
   max-width: 100%;
   display: block;
-  margin-top: 15px;
+  margin: 15px auto 0 auto;
 }
-.articleCards__showMoreButton {
+.publicationCards__showBtn {
   background: #5970ff;
   border: none;
   border-radius: 5px;
   color: white;
   padding: 10px 30px;
 }
-.articleCards__moreButtonContainer {
+.adjustBox {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 @media screen and (max-width: 950px) {
-  .articleCards__wrapper {
+  .publicationCards__wrapper {
     flex-direction: column;
     align-items: center;
   }
-  .articleCards__card {
+  .publicationCards__content {
     width: 96%;
   }
 }

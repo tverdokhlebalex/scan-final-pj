@@ -30,16 +30,16 @@ const PublicationCards = () => {
 
   return (
     <>
-      <div className="articleCards__wrapper">
+      <div className="publicationCards__wrapper">
         {docs.map((obj, ind) => (
-          <div className="articleCards__card" key={ind}>
-            <div className="articleCards__header">
-              <span className="articleCards__date">{obj.date}</span>
-              <a className="articleCards__link" href={obj.articleUrl}>
+          <div className="publicationCards__content" key={ind}>
+            <div className="publicationCards__dateArticle">
+              <span className="publicationCards__span">{obj.date}</span>
+              <a className="publicationCards__article" href={obj.articleUrl}>
                 {obj.articleUrlTitle}
               </a>
             </div>
-            <h4 className="articleCards__title">{obj.articleTitle}</h4>
+            <h4 className="publicationCards__title">{obj.articleTitle}</h4>
             {obj.articleTags &&
               obj.articleTags.map((tag) => (
                 <Badge bg="warning" text="dark" key={tag}>
@@ -48,30 +48,30 @@ const PublicationCards = () => {
               ))}
             {obj.imageUrl && (
               <img
-                className="articleCards__image"
+                className="publicationCards__img"
                 src={obj.imageUrl}
                 alt="article pic"
               />
             )}
             <div dangerouslySetInnerHTML={{ __html: obj.articleContent }} />
-            <div className="articleCards__footer">
+            <div className="publicationCards__buttonBox">
               <form action={obj.articleUrl} target="_blank">
-                <button className="articleCards__button">
-                  Читать источник
+                <button className="publicationCards__button">
+                  Читать источнике
                 </button>
               </form>
-              <section className="articleCards__wordCount">
+              <section className="publicationCards__section">
                 {obj.wordCount} слов&lang;а&rang;
               </section>
             </div>
           </div>
         ))}
       </div>
-      <div className="articleCards__moreButtonContainer">
+      <div className="adjustBox">
         {!isDone && (
           <button
             onClick={showTenArticles}
-            className="articleCards__showMoreButton"
+            className="publicationCards__showBtn"
           >
             Показать больше
           </button>
